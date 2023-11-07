@@ -1,0 +1,12 @@
+<h1 [fontWeight]="'bolder'" appHeadline>Estudiantes</h1>
+
+<button (click)="openStudentsDialog()" mb-3 mat-flat-button color="primary">
+  <mat-icon>add</mat-icon>
+  Crear usuario
+</button>
+
+<app-students-table
+  [dataSource]="students"
+  (editStudent)="onEditStudent($event)"
+  (deleteStudent)="onDeleteStudent($event)"
+></app-students-table>

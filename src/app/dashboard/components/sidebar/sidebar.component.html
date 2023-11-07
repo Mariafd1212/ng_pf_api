@@ -1,0 +1,47 @@
+<mat-nav-list>
+  <mat-icon style="font-size: 27px; height: 27px; width: 27px">
+    cottage
+  </mat-icon>
+  <mat-list-item routerLink="home" [activated]="true">
+    <a>Home</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="users">
+    <mat-icon style="font-size: 30px; height: 27px; width: 30px">
+      account_circle
+    </mat-icon>
+    <a>Usuarios</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="courses">
+    <mat-icon
+      style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
+      >book_2
+    </mat-icon>
+    <a>Cursos</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="students">
+    <mat-icon
+      style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
+      >person_book
+    </mat-icon>
+    <a>Estudiantes</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="enrollments">
+    <mat-icon
+      style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
+      >group_add
+    </mat-icon>
+    <a>Inscripciones</a>
+  </mat-list-item>
+
+  <mat-list-item (click)="logout()">
+    <mat-icon
+      style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
+      >logout
+    </mat-icon>
+    <a>Cerrar sesión</a>
+  </mat-list-item>
+</mat-nav-list>

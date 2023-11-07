@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "maria",
+      "lastname": "flores",
+      "email": "mary_fire@gmail.com",
+      "password": "1234",
+      "token": "sdkhfiaosufpoasjf",
+      "role": "admin",
+      "id": 1
+    }
+  ],
+  "students": [
+    {
+      "name": "fulanito",
+      "lastname": "ramirez",
+      "email": "fulanito@gmail.com",
+      "password": "1234",
+      "token": "sddsffiaosufdsgasjf",
+      "role": "student",
+      "id": 1
+    }
+  ]
+}
