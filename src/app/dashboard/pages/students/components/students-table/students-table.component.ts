@@ -19,7 +19,7 @@ export class StudentsTableComponent {
 
   displayedColumns = ['id', 'fullname', 'email', 'curso', 'actions'];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToDetail(userId: number): void {
     this.router.navigate(

@@ -15,7 +15,7 @@ export class AuthService {
 
   public authUser$ = this._authUser$.asObservable();
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   login(payload: LoginPayload): void {
 
@@ -26,10 +26,11 @@ export class AuthService {
       .subscribe({
         next: (response) => {
           if (!response.length) {
-            alert('Usuario o contrasena invalidos');
+            alert('Usuario o contraseña invalidos');
           } else {
             const authUser = response[0];
             this._authUser$.next(authUser);
+
             localStorage.setItem('token', authUser.token);
             this.router.navigate(['/dashboard/home']);
           }
