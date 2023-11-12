@@ -15,7 +15,13 @@ export class StudentsTableComponent {
   deleteStudent = new EventEmitter<number>();
 
   @Output()
-  editStudent = new EventEmitter<Student>();
+  private _editStudent = new EventEmitter<Student>();
+  public get editStudent() {
+    return this._editStudent;
+  }
+  public set editStudent(value) {
+    this._editStudent = value;
+  }
 
   displayedColumns = ['id', 'fullname', 'email', 'curso', 'actions'];
 
