@@ -8,22 +8,11 @@ import { Router } from '@angular/router';
   styles: [],
 })
 export class StudentsTableComponent {
-  @Input()
-  dataSource: Student[] = [];
+  @Input() dataSource: Student[] = [];
+  @Output() deleteStudent = new EventEmitter<number>();
+  @Output() editStudent = new EventEmitter<Student>();
 
-  @Output()
-  deleteStudent = new EventEmitter<number>();
-
-  @Output()
-  private _editStudent = new EventEmitter<Student>();
-  public get editStudent() {
-    return this._editStudent;
-  }
-  public set editStudent(value) {
-    this._editStudent = value;
-  }
-
-  displayedColumns = ['id', 'fullname', 'email', 'curso', 'actions'];
+  displayedColumns = ['id', 'fullname', 'course', 'email', 'actions'];
 
   constructor(private router: Router) { }
 
