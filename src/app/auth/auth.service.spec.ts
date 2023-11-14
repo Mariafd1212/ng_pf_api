@@ -4,11 +4,11 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environment } from 'src/environments/environment.local';
 
-import { MockProvider } from 'ng-mocks'; // Asegúrate de que ng-mocks está correctamente instalado e importado
+import { MockProvider } from 'ng-mocks';
 import { Router } from '@angular/router';
 
 fdescribe('AuthService', () => {
@@ -29,15 +29,15 @@ fdescribe('AuthService', () => {
         expect(authService).toBeTruthy();
     });
 
-    it('Debe establecer un usuario autenticado al hacer login()', () => {
+    it('should establish an authenticated user when logging in.', () => {
         const USER_MOCK: User = {
             id: 1,
             email: 'fake@mail.com',
             lastName: 'fakeLastName',
             name: 'fakeName',
             role: 'ADMIN',
-            token: 'fgdfhdfhdfhdfhsdfsdjklhnb',
-            password: '1234',
+            token: '84jfdskfsdjh3m2nudisfdusafjd',
+            password: '123456',
         };
 
         authService.login({
@@ -45,10 +45,11 @@ fdescribe('AuthService', () => {
             password: USER_MOCK.password,
         });
 
-        const req = httpController.expectOne({
-            method: 'GET',
-            url: `${environment.baseUrl}/users?email=${USER_MOCK.email}&password=${USER_MOCK.password}`,
-        })
+        httpController
+            .expectOne({
+                method: 'GET',
+                url: `${environment.baseUrl}/users?email=${USER_MOCK.email}&password=${USER_MOCK.password}`,
+            })
             .flush([USER_MOCK]);
 
         authService.authUser$.subscribe({
