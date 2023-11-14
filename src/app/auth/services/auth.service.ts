@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map, of } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
-
+import { MockProvider } from 'ng-mocks';
 import { environment } from 'src/environments/environment.local';
 import { LoginPayload } from '../models';
 import { Router } from '@angular/router';
