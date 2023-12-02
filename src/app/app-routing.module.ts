@@ -18,7 +18,7 @@ const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: 'login',
+    redirectTo: 'auth',
   },
 ];
 
@@ -26,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
