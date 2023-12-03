@@ -7,7 +7,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { CoreModule } from './core/core.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserAnimationsModule,
     CoreModule,
     MatNativeDateModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(appReducer, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
 
 
