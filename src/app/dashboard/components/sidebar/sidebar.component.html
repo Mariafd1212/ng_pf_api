@@ -1,19 +1,27 @@
+<div style="background-color: rgb(148, 59, 186)">
+  <p>
+    {{ fullName$ | async }}
+    <br />
+    {{ email$ | async }}
+  </p>
+</div>
+
 <mat-nav-list>
-  <mat-icon style="font-size: 27px; height: 27px; width: 27px">
-    cottage
-  </mat-icon>
-  <mat-list-item routerLink="home" [activated]="true">
+  <mat-list-item routerLink="home" routerLinkActive="activated">
+    <mat-icon style="font-size: 30px; height: 27px; width: 30px">
+      cottage
+    </mat-icon>
     <a>Home</a>
   </mat-list-item>
 
-  <mat-list-item routerLink="users">
+  <mat-list-item routerLink="users" routerLinkActive="activated">
     <mat-icon style="font-size: 30px; height: 27px; width: 30px">
       account_circle
     </mat-icon>
     <a>Usuarios</a>
   </mat-list-item>
 
-  <mat-list-item routerLink="courses">
+  <mat-list-item routerLink="courses" routerLinkActive="activated">
     <mat-icon
       style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
       >book_2
@@ -21,7 +29,7 @@
     <a>Cursos</a>
   </mat-list-item>
 
-  <mat-list-item routerLink="students">
+  <mat-list-item routerLink="students" routerLinkActive="activated">
     <mat-icon
       style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
       >person_book
@@ -29,7 +37,7 @@
     <a>Estudiantes</a>
   </mat-list-item>
 
-  <mat-list-item routerLink="enrollments">
+  <mat-list-item routerLink="enrollments" routerLinkActive="activated">
     <mat-icon
       style="font-size: 27px; height: 27px; width: 27px; padding-top: 10px"
       >group_add

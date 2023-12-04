@@ -17,9 +17,9 @@ export class UsersTableComponent {
   @Output()
   editUser = new EventEmitter<User>();
 
-  displayedColumns = ['id', 'fullname', 'email', 'actions'];
+  displayedColumns = ['id', 'fullname', 'email', 'password', 'token', 'role', 'actions'];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToDetail(userId: number): void {
     this.router.navigate(
@@ -29,7 +29,7 @@ export class UsersTableComponent {
         'detail',
         userId,
         {
-          nombre: 'josue',
+          nombre: 'Maria',
           edad: 28,
         },
       ],

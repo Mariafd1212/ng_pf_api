@@ -1,24 +1,40 @@
 {
   "users": [
     {
-      "name": "maria",
-      "lastname": "flores",
+      "name": "Maria",
+      "lastName": "Flores",
       "email": "mary_fire@gmail.com",
       "password": "1234",
       "token": "sdkhfiaosufpoasjf",
       "role": "admin",
       "id": 1
-    }
-  ],
-  "students": [
+    },
     {
-      "name": "fulanito",
-      "lastname": "ramirez",
-      "email": "fulanito@gmail.com",
-      "password": "1234",
-      "token": "sddsffiaosufdsgasjf",
-      "role": "student",
-      "id": 1
+      "name": "Pepe",
+      "lastName": "Rodriguez",
+      "email": "peperodriguez@gmail.com",
+      "password": "12345",
+      "token": "fgdsagsdgfdfsvtg",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "name": "Christian",
+      "lastName": "Gray",
+      "email": "mrgray@gmail.com",
+      "password": "123456",
+      "token": "fhfsdguuhweiras",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "name": "Carlos",
+      "lastName": "García",
+      "email": "gfghgfhf@gmail.com",
+      "password": "22551",
+      "token": "fdghdfhdfhnb",
+      "role": "estudiante",
+      "id": "4"
     }
   ]
 }

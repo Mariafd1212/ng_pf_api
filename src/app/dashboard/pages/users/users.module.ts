@@ -10,6 +10,7 @@ import { UsersBetterService } from './users-better.service';
 import { MockUsersService } from './mock-users.service';
 import { ApiUrl } from 'src/app/config/url.token';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { RouterModule } from '@angular/router';
 import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
@@ -24,18 +25,23 @@ import { UsersRoutingModule } from './users-routing.module';
 
   providers: [
     UsersService,
-
+    // {
+    //   provide: UsersBetterService,
+    //   useExisting: UsersService,
+    // },
     {
+      // Cuando se inyecte UsersService,
       provide: UsersService,
+      // Enrealidad uses:
       useClass: UsersService,
     },
 
     {
       provide: ApiUrl,
       useValue: {
-        url: 'http://localhost:3000/users',
+        url: 'http://localhost:34322/users',
       },
     },
   ],
 })
-export class UsersModule {}
+export class UsersModule { }

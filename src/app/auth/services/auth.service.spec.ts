@@ -4,7 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth.service';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environment } from 'src/environments/environment.local';
 

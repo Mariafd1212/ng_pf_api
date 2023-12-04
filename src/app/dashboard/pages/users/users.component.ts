@@ -4,6 +4,7 @@ import { UsersDialogComponent } from './components/users-dialog/users-dialog.com
 import { User } from './models';
 import { UsersService } from './users.service';
 import { UsersBetterService } from './users-better.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -13,29 +14,23 @@ import { UsersBetterService } from './users-better.service';
 export class UsersComponent {
   userName = '';
 
-  users: User[] = [];
+  users$: Observable<User[]>;
 
   constructor(
     private matDialog: MatDialog,
-    private usersService: UsersService 
+    private usersService: UsersService
   ) {
-    this.users = this.usersService.getUsers();
+    this.users$ = this.usersService.getUsers();
   }
 
-  openUsersDialog(): void {
+  addUser(): void {
     this.matDialog
       .open(UsersDialogComponent)
       .afterClosed()
       .subscribe({
         next: (v) => {
           if (!!v) {
-            this.users = [
-              ...this.users,
-              {
-                ...v,
-                id: new Date().getTime(),
-              },
-            ];
+            this.users$ = this.usersService.createUser(v);
           }
         },
       });
@@ -50,18 +45,16 @@ export class UsersComponent {
       .subscribe({
         next: (v) => {
           if (!!v) {
+            this.users$ = this.usersService.updateUser(user.id, v);
 
-            this.users = this.users.map((u) =>
-              u.id === user.id ? { ...u, ...v } : u
-            );
           }
         },
       });
   }
 
   onDeleteUser(userId: number): void {
-    if (confirm('Esta seguro?')) {
-      this.users = this.users.filter((u) => u.id !== userId);
+    if (confirm('Esta seguro de eliminarlo?')) {
+      this.users$ = this.usersService.deleteUser(userId);
     }
   }
 }

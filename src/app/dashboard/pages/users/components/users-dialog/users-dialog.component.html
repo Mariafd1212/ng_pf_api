@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>
-  {{ user ? "Editando usuario" : "Crear usuario" }}
+  {{ user ? 'Editando usuario' : 'Crear usuario' }}
 </h1>
 
 <div mat-dialog-content>
@@ -12,7 +12,7 @@
           <mat-label>Nombre</mat-label>
           <input formControlName="name" matInput />
           <mat-error>
-            {{ userForm.get("name")?.errors | formErrors }}
+            {{ userForm.get('name')?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -21,7 +21,7 @@
           <mat-label>Apellido</mat-label>
           <input formControlName="lastName" matInput />
           <mat-error>
-            {{ userForm.get("lastName")?.errors | formErrors }}
+            {{ userForm.get('lastName')?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -30,7 +30,43 @@
           <mat-label>Email</mat-label>
           <input formControlName="email" matInput />
           <mat-error>
-            {{ userForm.get("email")?.errors | formErrors }}
+            {{ userForm.get('email')?.errors | formErrors }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" matInput />
+          <mat-error>
+            {{ userForm.get('password')?.errors | formErrors }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Token</mat-label>
+          <input formControlName="token" matInput />
+          <mat-error>
+            {{ userForm.get('token')?.errors | formErrors }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Rol</mat-label>
+          <input formControlName="role" matInput />
+          <mat-error>
+            {{ userForm.get('role')?.errors | formErrors }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>ID</mat-label>
+          <input formControlName="id" matInput />
+          <mat-error>
+            {{ userForm.get('id')?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
