@@ -28,9 +28,7 @@ export class AuthService {
   }
 
   login(payload: LoginPayload): void {
-    // const headers = new HttpHeaders({
-    //   token: localStorage.getItem('token') || 'NO HAY TOKEN',
-    // });
+
     this.httpClient
       .get<User[]>(
         `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`

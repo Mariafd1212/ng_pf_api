@@ -25,21 +25,16 @@ import { UsersRoutingModule } from './users-routing.module';
 
   providers: [
     UsersService,
-    // {
-    //   provide: UsersBetterService,
-    //   useExisting: UsersService,
-    // },
+
     {
-      // Cuando se inyecte UsersService,
       provide: UsersService,
-      // Enrealidad uses:
       useClass: UsersService,
     },
 
     {
       provide: ApiUrl,
       useValue: {
-        url: 'http://localhost:34322/users',
+        url: 'http://localhost:3000/users',
       },
     },
   ],

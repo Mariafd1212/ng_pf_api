@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { adminGuard } from '../core/guards/admin.guard';
+
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { DashboardComponent } from './dashboard.component';
 
           {
             path: 'users',
+            canActivate: [adminGuard],
             loadChildren: () =>
               import('./pages/users/users.module').then(
                 (m) => m.UsersModule),
@@ -56,4 +59,4 @@ import { DashboardComponent } from './dashboard.component';
   ],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule { }

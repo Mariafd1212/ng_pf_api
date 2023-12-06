@@ -6,35 +6,34 @@
       "email": "mary_fire@gmail.com",
       "password": "1234",
       "token": "sdkhfiaosufpoasjf",
-      "role": "admin",
+      "role": "ADMIN",
       "id": 1
     },
     {
       "name": "Pepe",
       "lastName": "Rodriguez",
       "email": "peperodriguez@gmail.com",
-      "password": "12345",
+      "password": "1234",
       "token": "fgdsagsdgfdfsvtg",
-      "role": "admin",
+      "role": "STUDENT",
       "id": 2
     },
     {
       "name": "Christian",
       "lastName": "Gray",
       "email": "mrgray@gmail.com",
-      "password": "123456",
+      "password": "1234",
       "token": "fhfsdguuhweiras",
-      "role": "admin",
+      "role": "TEACHER",
       "id": 3
-    },
+    }
+  ],
+  "courses": [
     {
-      "name": "Carlos",
-      "lastName": "García",
-      "email": "gfghgfhf@gmail.com",
-      "password": "22551",
-      "token": "fdghdfhdfhnb",
-      "role": "estudiante",
-      "id": "4"
+      "name": "Curso 1",
+      "id": 1,
+      "startDate": "13/05/2022",
+      "endDate": "20/12/2023"
     }
   ]
 }

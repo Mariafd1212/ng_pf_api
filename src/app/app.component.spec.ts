@@ -36,9 +36,7 @@ describe('AppComponent', () => {
           provide: AppService,
           useClass: AppMockService,
         },
-        MockProvider(AppService, {
-          saludar: () => console.log('Saludando')
-        })
+        MockProvider(AppService)
       ],
     })
   );
